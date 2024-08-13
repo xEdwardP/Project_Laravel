@@ -7,4 +7,4 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::view('clientes.index', ClienteController::class);
+Route::resource('clientes', ClienteController::class);

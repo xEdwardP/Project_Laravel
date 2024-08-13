@@ -7,6 +7,7 @@
     <title>@yield('title')</title>
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 </head>
 
 <body>
@@ -24,10 +25,10 @@
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav ms-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link active" href="#">Inicio</a>
+                                    <a class="nav-link active" href="">Inicio</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Clientes</a>
+                                    <a class="nav-link" href="{{route('clientes.index')}}">Clientes</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Proveedores</a>

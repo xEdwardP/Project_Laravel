@@ -8,31 +8,41 @@ use Illuminate\Http\Request;
 class ClienteController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Muestra el listado de registros
      */
     public function index()
     {
-        //
+        $clientes = Cliente::all();
+        return view('clientes.index', compact('clientes'));
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Mostrar el formulario de registro
      */
     public function create()
     {
-        //
+        return view('clientes.create');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Guardar un nuevo registro
      */
     public function store(Request $request)
     {
-        //
+        $cliente = new Cliente();
+        $cliente->nombre_o_razon = $request->nombre;
+        $cliente->direccion = $request->direccion;
+        $cliente->telefono = $request->telefono;
+        $cliente->genero = $request->genero;
+        $cliente->fecha_nac = $request->fecha_nac;
+        $cliente->correo = $request->correo;
+
+        $cliente->save();
+        return redirect()->route('clientes.index');
     }
 
     /**
-     * Display the specified resource.
+     * Mostrar datos de un registro en especifico
      */
     public function show(Cliente $cliente)
     {
@@ -40,7 +50,7 @@ class ClienteController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Muestra el formulario para luego actualizarlo
      */
     public function edit(Cliente $cliente)
     {
@@ -48,7 +58,7 @@ class ClienteController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Actualizar un registro en especifico
      */
     public function update(Request $request, Cliente $cliente)
     {
@@ -56,7 +66,7 @@ class ClienteController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Eliminar un registro en especifico
      */
     public function destroy(Cliente $cliente)
     {
