@@ -17,10 +17,10 @@ return new class extends Migration
             $table->string('nombre', 200);
             $table->string('genero', 15);
             $table->date('fecha_nac');
-            $table->string('correo', 200)->unique();
-            $table->string('clave', 200);
-            $table->string('rol', 30);
-            $table->string('estado', 20)->default('ACTIVO');
+            $table->string('correo')->unique();
+            $table->string('clave');
+            $table->string('rol', 50);
+            $table->string('estado', 50)->default('ACTIVO');
             $table->rememberToken();
             $table->timestamps();
         });

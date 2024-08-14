@@ -29,7 +29,7 @@ class UserFactory extends Factory
             'genero' => 'Masculino',
             'fecha_nac' => '2000-12-01',
             'correo' => 'edwardpineda2022@gmail.com',
-            'clave' => bcrypt('Hol@321-'),
+            'clave' => bcrypt('123456789'),
             'rol' => 'Administrador',
             'remember_token' => Str::random(10),
         ];
