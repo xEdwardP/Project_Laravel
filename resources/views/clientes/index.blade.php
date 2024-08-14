@@ -1,20 +1,25 @@
-@extends('template')
+@extends('adminlte::page')
 
-@section('title', 'Listado de Clientes')
+@section('title', 'Clientes')
+
+@section('content_header')
+    <h1>Clientes</h1>
+@stop
 
 @section('content')
     <div class="row">
         <div class="col-12 mt-2">
             <div class="card">
                 <div class="card-body">
-                    <span class="bg-info rounded px-2 py-1 text-light">
+                    <span class="bg-info rounded px-2 py-1 text-light mt-2">
                         <strong>Listado de Clientes</strong>
                     </span>
 
                     <div class="row">
-                        <div class="col-12 text-end border-bottom pb-1">
+                        <div class="col-12 text-right border-bottom pb-1 mt-2">
                             <a href="{{ route('clientes.create') }}" class="btn btn-primary btn-sm">
-                                <span>Nuevo Cliente</span>
+                                <i class="fa-solid fa-user-plus"></i>
+                                <span class="d-none d-md-inline">Nuevo Cliente</span>
                             </a>
                         </div>
                     </div>
@@ -40,7 +45,8 @@
                                             <td><small>{{ $cliente->telefono }}</small></td>
                                             <td><small>{{ $cliente->correo }}</small></td>
                                             <td>
-                                                <a href="" class="btn btn-outline-warning btn-sm">
+                                                <a href="{{ route('clientes.edit', $cliente->id) }}"
+                                                    class="btn btn-outline-warning btn-sm">
                                                     <i class="fa-solid fa-user-pen"></i>
                                                     <span>Editar</span>
                                                 </a>
@@ -59,4 +65,15 @@
             </div>
         </div>
     </div>
-@endsection
+@stop
+
+@section('css')
+    {{-- Add here extra stylesheets --}}
+    {{-- <link rel="stylesheet" href="/css/admin_custom.css"> --}}
+@stop
+
+@section('js')
+    <script>
+        console.log("Hi, I'm using the Laravel-AdminLTE package!");
+    </script>
+@stop

@@ -1,17 +1,21 @@
-@extends('template')
+@extends('adminlte::page')
 
-@section('title', 'Registrar Nuevo Cliente')
+@section('title', 'Dashboard')
+
+@section('content_header')
+    <h1>Registrar Cliente</h1>
+@stop
 
 @section('content')
     <div class="row">
         <div class="col-12 mt-2">
             <div class="card">
                 <div class="card-header">
-                    <small class="bg-info px-2 py-1 rounded text-light"><strong>Registrar Nuevo Cliente</strong></small>
+                    <small class="bg-info px-2 py-1 rounded text-light"><strong><i class="fa-solid fa-user-plus"></i>Registrar Nuevo Cliente</strong></small>
                 </div>
 
                 <div class="card-body">
-                    <form action="{{route('clientes.store')}}" method="POST">
+                    <form action="{{ route('clientes.store') }}" method="POST">
                         @csrf
                         <div class="row">
                             <div class="col-12 mt-2">
@@ -58,7 +62,7 @@
                             <div class="col-12 my-3 mt-3">
                                 <hr>
                                 <button type="submit" class="btn btn-success btn-sm">Registrar</button>
-                                <a href="{{route('clientes.index')}}" class="btn btn-danger btn-sm">Cancelar</a>
+                                <a href="{{ route('clientes.index') }}" class="btn btn-danger btn-sm">Cancelar</a>
                             </div>
                         </div>
                     </form>
@@ -66,4 +70,15 @@
             </div>
         </div>
     </div>
-@endsection
+@stop
+
+@section('css')
+    {{-- Add here extra stylesheets --}}
+    {{-- <link rel="stylesheet" href="/css/admin_custom.css"> --}}
+@stop
+
+@section('js')
+    <script>
+        console.log("Hi, I'm using the Laravel-AdminLTE package!");
+    </script>
+@stop
