@@ -330,6 +330,23 @@ return [
             'route' => '',
             'icon' => 'fa-solid fa-users',
         ],
+        [
+            'text' => 'Inventario',
+            'icon' => 'fa-solid fa-boxes-stacked',
+            'submenu' => [
+                [
+                    'text' => 'Categorias',
+                    'route' => 'categorias.index',
+                    'icon' => 'fa-solid fa-users',
+                ],
+                [
+                    'text' => 'Boton 2',
+                    'route' => '',
+                    'icon' => 'fa-solid fa-users',
+                ],
+            ],
+        ],
+        
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
