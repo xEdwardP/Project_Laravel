@@ -321,9 +321,9 @@ return [
             'icon' => 'fa-solid fa-users',
         ],
         [
-            'text' => 'Boton 1',
-            'route' => '',
-            'icon' => 'fa-solid fa-users',
+            'text' => 'Empleados',
+            'route' => 'empleados.index',
+            'icon' => 'fa-solid fa-user-tie',
         ],
         [
             'text' => 'Boton 2',

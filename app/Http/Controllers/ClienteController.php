@@ -52,17 +52,22 @@ class ClienteController extends Controller
     /**
      * Muestra el formulario para luego actualizarlo
      */
-    public function edit(Cliente $cliente)
+    public function edit($id_cliente)
     {
-        //
+        $cliente = Cliente::findOrFail($id_cliente);
+        return view('clientes.edit', compact('cliente'));
     }
 
     /**
      * Actualizar un registro en especifico
      */
-    public function update(Request $request, Cliente $cliente)
+    public function update(Request $request, $id_cliente)
     {
-        //
+        // $cliente = Cliente::findOrFail($id_cliente);
+        // $cliente->nombre = $request->nombre;
+
+        // $cliente->save();
+        // return redirect()->route('clientes.index');
     }
 
     /**
