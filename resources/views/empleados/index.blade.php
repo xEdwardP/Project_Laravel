@@ -37,11 +37,11 @@
                                                 <a href="{{ route('empleados.edit', $empleado->codigo) }}"
                                                     class="btn btn-outline-warning btn-xs">
                                                     <i class="fa-solid fa-user-pen"></i>
-                                                    <span>Editar</span>
+                                                    <span class="d-none d-md-inline">Editar</span>
                                                 </a>
                                                 <a href="{{route('empleados.show', $empleado->codigo)}}" class="btn btn-outline-danger btn-xs">
                                                     <i class="fa-solid fa-user-minus"></i>
-                                                    <span>Eliminar</span>
+                                                    <span class="d-none d-md-inline">Eliminar</span>
                                                 </a>
                                             </td>
                                         </tr>

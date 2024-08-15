@@ -35,9 +35,11 @@ class EmpleadoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Empleado $empleado)
+    public function show($id_empleado)
     {
-        //
+        $empleado = Empleado::findOrFail($id_empleado);
+        return view('empleados.show', compact('empleado'));
+
     }
 
     /**
@@ -52,16 +54,29 @@ class EmpleadoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Empleado $empleado)
+    public function update(Request $request, $id_empleado)
     {
-        //
+        $empleado = Empleado::findOrFail($id_empleado);
+        $empleado->rtn = $request->rtn;
+        $empleado->nombre = $request->nombrec;
+        $empleado->direccion = $request->direccion;
+        $empleado->telefono = $request->telefono;
+        $empleado->genero = $request->genero;
+        $empleado->correo = $request->correo;
+        $empleado->estado = $request->estado;
+
+        $empleado->save();
+        return redirect()->route('empleados.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Empleado $empleado)
+    public function destroy($id_empleado)
     {
-        //
+        $empleado = Empleado::findOrFail($id_empleado);
+        $empleado->delete();
+
+        return redirect()->route('empleados.index');
     }
 }
